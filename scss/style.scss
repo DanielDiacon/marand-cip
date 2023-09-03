@@ -1,0 +1,130 @@
+// import fonts/font <=>
+@font-face {
+   font-family: ferry;
+   src: url(../fonts/Ferry/2717-font.otf);
+}
+@font-face {
+   font-family: gildoy;
+   src: url(../fonts/Gilroy/Gilroy-ExtraBold.otf);
+}
+
+// default font / default font size <=>
+$fontFamily: 'gildoy';
+$fontFamilyBlack: 'ferry';
+$fontSize: 20;
+
+// base colors <=>
+$black: #0c0c0f;
+$gray: hsl(240, 2%, 10%);
+
+$white: #e1e1e5;
+$mainColor1: #0e0f11;
+
+// max width for container <=>
+$maxWidthContainer: 1250;
+
+// size gadjes for adapted and other <=>
+$tablet: 991.98px;
+$mobile: 767.98px;
+$mobileSmall: 479.98px;
+
+// null style <=>
+@import '_null.scss';
+
+// general style <=>
+html {
+   scroll-behavior: smooth;
+   scroll-padding: 10px;
+}
+body {
+   overflow-x: hidden;
+   background: $black;
+   color: $white;
+   min-height: -webkit-fill-available;
+   line-height: 1.01;
+   letter-spacing: 1.1px;
+   font-family: $fontFamily;
+   font-size: $fontSize + px;
+   //scroll block when open burger
+   .lock & {
+      overflow: hidden;
+      touch-action: none;
+   }
+}
+// wrapper <=>
+.wrapper {
+   min-height: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+// container <=>
+.container {
+   max-width: $maxWidthContainer + px;
+   margin: 0 auto;
+   //fix for slider
+   > * {
+      min-width: 0;
+   }
+}
+
+// the footer to the bottom of the page <=>
+main {
+   padding-top: 80px;
+   flex: 1 1 auto;
+}
+
+// title  <=>
+.title {
+   font-family: $fontFamilyBlack;
+   letter-spacing: 1.5px;
+   line-height: 1.1;
+   font-size: 25px;
+   @media only screen and (max-width: $mobile) {
+      font-size: 20px;
+   }
+}
+
+// text  <=>
+.text {
+   opacity: 0.9;
+   @media only screen and (max-width: $mobile) {
+      font-size: 16px;
+   }
+}
+
+// scroll bar <=>
+@media only screen and (max-width: $mobile) {
+   ::-webkit-scrollbar {
+      display: none;
+   }
+}
+::-webkit-scrollbar {
+   width: 14px;
+}
+::-webkit-scrollbar-track {
+   background-color: $black;
+}
+::-webkit-scrollbar-thumb {
+   border-radius: 16px;
+   background-color: $white;
+}
+::-webkit-scrollbar-thumb:active {
+   background-color: #8f8f8f;
+}
+::-webkit-scrollbar-button {
+   display: none;
+}
+
+//import scss modules<=>
+@import '_header.scss';
+@import '_footer.scss';
+@import '_loading.scss';
+@import '_about.scss';
+@import '_gallery.scss';
+@import '_contact.scss';
+@import '_skills.scss';
+@import '_story.scss';
+@import '_contacts.scss';
+@import '_hobby.scss';
+@import '_certified.scss';
