@@ -25,8 +25,6 @@ const prePosts = [
    { name: 'deep-sleep', type: 'posters' },
    { name: 'dope', type: 'logos' },
    { name: 'enlight-your-mind', type: 'posters' },
-   { name: 'carnival', type: 'logos' },
-   { name: 'death-hell', type: 'posters' },
    { name: 'cardinal', type: 'logos' },
 ];
 const posts = prePosts.map((post) => {

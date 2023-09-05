@@ -36,6 +36,9 @@
       overflow: hidden;
       transition: 0.3s;
       cursor: pointer;
+      @media (max-width: $mobile) {
+         background-image: radial-gradient(#00000000, $gray);
+      }
    }
    &__img img {
       position: absolute;
@@ -48,9 +51,6 @@
       user-select: none;
       transition: 0.3s;
    }
-   &__img.active img {
-      opacity: 0;
-   }
    &__img:hover img {
       transform: scale(1.1);
    }
@@ -61,15 +61,35 @@
       font-style: italic;
       z-index: 3;
       padding: 20px;
-      font-size: 16px;
+      font-size: 20px;
       opacity: 0;
       visibility: hidden;
       transition: 0.3s;
       text-shadow: 0 0 10px $black;
+      background: linear-gradient(#00000000, $gray);
+      @media (max-width: $mobile) {
+         font-size: 18px;
+      }
+      @media (max-width: $mobileSmall) {
+         font-size: 16px;
+      }
    }
    &__img.active .about__def {
       opacity: 1;
       visibility: visible;
+   }
+   //def on the mobile adapt
+   @media (max-width: $mobile) {
+      &__icon-text {
+         display: none;
+      }
+      &__img.active img {
+         opacity: 1;
+      }
+      &__def {
+         opacity: 1;
+         visibility: visible;
+      }
    }
 }
 .about-description {
@@ -82,11 +102,20 @@
    position: relative;
    overflow: hidden;
    text-shadow: 0 0 10px $black;
+   @media (max-width: $tablet) {
+      justify-content: space-between;
+   }
    &__title {
       z-index: 2;
+      @media (max-width: $tablet) {
+         font-size: 20px;
+      }
    }
    &__text {
       z-index: 2;
+      @media (max-width: $tablet) {
+         font-size: 16px;
+      }
    }
 
    &__images {
@@ -298,8 +327,5 @@
          grid-template-rows: 1fr 1fr;
          grid-template-columns: 1fr;
       }
-   }
-   .about-description {
-      justify-content: space-between;
    }
 }

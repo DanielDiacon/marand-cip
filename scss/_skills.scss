@@ -1,80 +1,78 @@
 .skills {
    padding: 20px;
    &__title {
-      padding-bottom: 20px;
+      text-align: center;
+      padding-bottom: 30px;
    }
-   &__grid {
+   &__body {
       display: grid;
-      grid-template-columns: repeat(auto-fit , minmax(430px,1fr));
-      gap: 30px; 
-      @media only screen and (max-width:$tablet) {
-         grid-template-columns: repeat(auto-fit , minmax(350px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      @media only screen and (max-width: $mobile) {
+         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       }
-      @media only screen and (max-width:$mobileSmall) {
-         grid-template-columns: repeat(auto-fit , minmax(300px,1fr));
-      }
-   }
-   &__item {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-   }
-   &__top {
-      display: flex;
-      align-items: center;
-      @media only screen and (max-width:$mobileSmall) {
-         flex-direction: column;
-         align-items: flex-start;
-         gap: 15px;
+      @media only screen and (max-width: $mobileSmall) {
+         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       }
    }
-   &__row{
-      display: flex;
-      align-items: center;
-   }
-   &__logo {
-      min-height: 50px;
-      min-width: 50px;
+   &__img {
       position: relative;
+      aspect-ratio: 1 / 1;
+      border-radius: 25px;
+      overflow: hidden;
    }
-   &__logo.logo-png{
-      background: $white;
-      border-radius: 10px;
-   }
-   &__logo img{
+   &__img::after {
+      content: '';
       position: absolute;
-      width: 100%;
-      height: 100%;  
       top: 0;
       left: 0;
-      object-fit: contain;
-   }
-   &__logo.logo-png img{
-      padding: 7px;
-   }
-   &__name {
-      text-align: center;
-      padding: 0 20px;
-   }
-   &__progressbar {
       width: 100%;
-      height: 5px;
-      background: rgba($color: $white, $alpha: .5);
-      position: relative;
-      border-radius:10px ;
+      height: 100%;
+      background: radial-gradient(#00000000, $gray);
+      background-position: center;
+      background-size: 150% 150%;
+      border-radius: 25px;
+      z-index: 3;
+      pointer-events: none;
    }
-   &__progressbar::after{
-      content:'';
+   &__img img {
       position: absolute;
-      border-radius:10px ;
-      top: -2.5px;left: 0;
-      width: var(--width-progress);
-      height: 10px;
-      background: $white;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 25px;
+      transition: 0.3s;
    }
-   &__description {
-      opacity: .8;
-      font-size: 16px;
+   &__img:hover img {
+      transform: scale(1.1);
+   }
+   &__img:nth-child(1) {
+      background: hsl(207, 100%, 9%);
+   }
+   &__img:nth-child(2) {
+      background: hsl(0, 100%, 9%);
+   }
+   &__img:nth-child(3) {
+      background: #470019;
+   }
+   &__img:nth-child(4) {
+      background: #00005b;
+   }
+   &__img:nth-child(5) {
+      background: #00005b;
+   }
+   &__img:last-child {
+      background: #fff;
+      & img {
+         position: absolute;
+         top: 50px;
+         left: 50px;
+         width: calc(100% - 100px);
+         height: calc(100% - 100px);
+         object-fit: cover;
+         border-radius: 25px;
+      }
    }
 }
