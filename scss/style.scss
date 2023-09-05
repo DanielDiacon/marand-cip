@@ -82,7 +82,7 @@ main {
    font-size: 25px;
    transform: translatey(-10px);
    opacity: 0;
-   transition: 0.5s;
+   transition: 0.7s;
    @media only screen and (max-width: $mobile) {
       font-size: 20px;
    }
@@ -96,7 +96,7 @@ main {
    opacity: 0.9;
    transform: translatey(-10px);
    opacity: 0;
-   transition: 0.5s;
+   transition: 0.7s;
    transition-delay: 0.2s;
    @media only screen and (max-width: $mobile) {
       font-size: 16px;
@@ -109,7 +109,7 @@ main {
 // block  <=>
 .block {
    transform: scale(0.9);
-   transition: 0.5s;
+   transition: 0.7s;
 }
 .block[data-scroll='in'] {
    transform: scale(1);

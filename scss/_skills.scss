@@ -45,9 +45,6 @@
       border-radius: 25px;
       transition: 0.3s;
    }
-   &__img:hover img {
-      transform: scale(1.1);
-   }
    &__img:nth-child(1) {
       background: hsl(207, 100%, 9%);
    }

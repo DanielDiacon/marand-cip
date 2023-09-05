@@ -9,14 +9,7 @@ burger.onclick = function () {
    body.classList.toggle('lock');
 };
 document.onclick = function (e) {
-   if (
-      e.target.id !== 'burger' &&
-      e.target.classList !== 'menu' &&
-      e.target.id !== 'logo' &&
-      e.target.id !== 'submenu' &&
-      e.target.id !== 'dropdown' &&
-      e.target.id !== 'dropdownMenu'
-   ) {
+   if (e.target.id !== 'burger' && e.target.classList !== 'menu') {
       burger.classList.remove('active');
       menu.classList.remove('active');
       body.classList.remove('lock');
@@ -80,7 +73,14 @@ document.addEventListener('click', (e) => {
 });
 
 //  animation for scroll <=====================================>
+
+//smooth scroll <=>
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+ScrollSmoother.create({
+   wrapper: '.scroll-wrapper',
+   content: '.scroll-content',
+   smooth: 0.7,
+});
 ScrollOut({
    targets: '.title , .text , .block',
 });
-// <=>
