@@ -4,13 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
    for (let i = 0; i < posts.length; i++) {
       const post = posts[i];
       let liTag = `
-       <div class="gallery__item" data-name="${post.type}">
+       <div class="gallery__item block" data-name="${post.type}">
          <a href="./img/posters/${post.src}" data-lightbox="gallery">
             <img src="./img/posters/${post.src}" alt="${post.name}" class="gallery__img" />
          </a>
          <p class="gallery__name">${post.name}</p>
        </div>`;
       ulTag.insertAdjacentHTML('beforeend', liTag);
+      ScrollOut({
+         targets: ' .block',
+      });
    }
 });
 

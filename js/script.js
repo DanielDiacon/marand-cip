@@ -78,3 +78,9 @@ document.addEventListener('click', (e) => {
       document.querySelector('.popup').classList.remove('active');
    }
 });
+
+//  animation for scroll <=====================================>
+ScrollOut({
+   targets: '.title , .text , .block',
+});
+// <=>

@@ -14,6 +14,7 @@ const prePosts = [
    { name: 'pain-red', type: 'logos' },
    { name: 'pain', type: 'posters' },
    { name: 'muerte', type: 'logos' },
+   { name: 'music-sinns', type: 'posters' },
    { name: 'old-1950', type: 'logos' },
    { name: 'man-fly', type: 'posters' },
    { name: 'go-to-sleep', type: 'logos' },
@@ -23,6 +24,7 @@ const prePosts = [
    { name: 'fly-cipi', type: 'logos' },
    { name: 'deep-sleep', type: 'posters' },
    { name: 'dope', type: 'logos' },
+   { name: 'enlight-your-mind', type: 'posters' },
    { name: 'cardinal', type: 'logos' },
 ];
 const posts = prePosts.map((post) => {
