@@ -75,7 +75,7 @@
    }
 }
 
-@media (max-width: $mobileSmall) {
+@media (max-width: $mobile) {
    .contacts {
       &__body {
          grid-template-rows: 1fr 1fr;
